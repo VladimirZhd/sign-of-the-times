@@ -1,7 +1,10 @@
 * {
 	box-sizing: border-box;
 }
-
+.home-wrapper {
+padding-left: 150px;
+background-color: red;
+}
 body {
 	color: black;
 }
