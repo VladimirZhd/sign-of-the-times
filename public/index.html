@@ -39,30 +39,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
-  <body>
     <!-- this is the start of content -->
-    <h1>
-      The Hippest Gang Signs
-    </h1>
-    <input type="text" id="searcher" onchange="Search()">
-    <p id="x"> </p>
-    <script>
-    var searched = document.getElementById("search");
-    function Search() {
-        document.getElementById("x").innerHTML = document.getElementById("searcher").value;}
-    </script> 
-    <h3>Submit a translation</h3>
-    <input type="file"
-       id="sign" name="sign"
-       accept="image/png, image/jpeg, image/gif">
-    <p> Translation </p>
-    <input type="text" id="word">
-    <button onclick="Submission()">Submit</button><br><br><br>
-    <p id="thanks"></p>
-    <script>
-    function Submission() {
-        document.getElementById("thanks").innerHTML = "Thank you, the translation has been put on the cloud";}
-    </script>
+
   </body>
 </html>

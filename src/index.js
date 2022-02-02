@@ -5,11 +5,6 @@ import App from './App';
 
 
 
-var searched = document.getElementById("search");
-function Search() {
-	document.getElementById("x").innerHTML = document.getElementById("searcher").value;
-}
-
 
 
 ReactDOM.render(
