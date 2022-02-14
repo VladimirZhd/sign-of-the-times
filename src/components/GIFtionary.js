@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import NavBar from './NavBar';
 import {getDocs, collection, query} from "firebase/firestore" 
