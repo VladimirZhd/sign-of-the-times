@@ -5,7 +5,7 @@ const Home = () => {
 		<>	
 		
 		<div className='home-wrapper'>Home Page</div>
-
+		
 		</>
 	);
 };
