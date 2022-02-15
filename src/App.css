@@ -1,7 +1,10 @@
 * {
 	box-sizing: border-box;
 }
-
+.home-wrapper {
+	padding-left: 150px;
+	background-color: red;
+}
 body {
 	color: black;
 }
@@ -50,3 +53,24 @@ body {
 .btn:hover {
 	transform: scale(1.05);
 }
+.nav-bar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	background-color: 2px solid #596bdf;
+}
+
+.button {
+	background-color: #8492ec;
+	color: #283cac;
+}
+
+.button:hover {
+	background-color: #283cac;
+	color: #8492ec;
+}
+
+/* .Home-Button {} */
+
+/* .GIFtionary-Button {} */
