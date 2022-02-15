@@ -4,6 +4,7 @@ import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 const Admin = () => {
+	// create state variables for admin page
 	const [data, setData] = useState({
 		translation: '',
 		error: '',
@@ -28,39 +29,52 @@ const Admin = () => {
 	// Handle form submission
 	const handleSubmit = async (e) => {
 		try {
-			console.log(storage);
+			setData({ ...data, loading: true });
+			// Prevent page reload on submit
 			e.preventDefault();
 			let url = '';
 			let imagePath = '';
+
+			// check for errors
+			if (!translation || !image) {
+				setData({ ...data, error: 'All fields are required.' });
+				return;
+			}
+
+			// If the image was added then upload it to the storage
 			if (image) {
+				// Create image reference
 				const imageRef = ref(
 					storage,
 					`gifs/${new Date().getTime()}-${image.name}`
 				);
+				// save snapshot of uploaded image
 				const snap = await uploadBytes(imageRef, image);
+				// save download url to use it in `img` tag to display gif
 				const dlUrl = await getDownloadURL(
 					ref(storage, snap.ref.fullPath)
 				);
+				// save image path to delete gif if record is deleted in the database
 				imagePath = snap.ref.fullPath;
 				url = dlUrl;
 			}
-
+			// Add a new record to the database
 			const newDoc = await addDoc(collection(db, 'gifs'), {
 				translation: translation,
 				gifUrl: url,
 				gifPath: imagePath,
 			});
-
+			// Update the record to include auto created unique id
 			await updateDoc(doc(db, 'gifs', newDoc.id), {
 				uid: newDoc.id,
 			});
-
+			// set state to default
 			setData({
 				translation: '',
 				error: '',
 				loading: false,
 			});
-
+			// set image to null
 			setImage(null);
 		} catch (error) {
 			setData({ ...data, error: error.message });
