@@ -28,7 +28,7 @@ const Admin = () => {
 	// Handle form submission
 	const handleSubmit = async (e) => {
 		try {
-			console.log(storage);
+			setData({ ...data, loading: true });
 			e.preventDefault();
 			let url = '';
 			let imagePath = '';
