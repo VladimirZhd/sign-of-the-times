@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { db, storage } from '../firebase';
+import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 const Admin = () => {
 	const [data, setData] = useState({
@@ -6,7 +9,7 @@ const Admin = () => {
 		error: '',
 		loading: false,
 	});
-	const [image, setImage] = useState();
+	const [image, setImage] = useState(null);
 
 	// Extract variables from state
 	const { translation, error, loading } = data;
@@ -23,9 +26,42 @@ const Admin = () => {
 	};
 
 	// Handle form submission
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		try {
+			console.log(storage);
 			e.preventDefault();
+			let url = '';
+			let imagePath = '';
+			if (image) {
+				const imageRef = ref(
+					storage,
+					`gifs/${new Date().getTime()}-${image.name}`
+				);
+				const snap = await uploadBytes(imageRef, image);
+				const dlUrl = await getDownloadURL(
+					ref(storage, snap.ref.fullPath)
+				);
+				imagePath = snap.ref.fullPath;
+				url = dlUrl;
+			}
+
+			const newDoc = await addDoc(collection(db, 'gifs'), {
+				translation: translation,
+				gifUrl: url,
+				gifPath: imagePath,
+			});
+
+			await updateDoc(doc(db, 'gifs', newDoc.id), {
+				uid: newDoc.id,
+			});
+
+			setData({
+				translation: '',
+				error: '',
+				loading: false,
+			});
+
+			setImage(null);
 		} catch (error) {
 			setData({ ...data, error: error.message });
 		}
@@ -54,7 +90,7 @@ const Admin = () => {
 					</div>
 					{error && <p className='error'>{error}</p>}
 					<button className='btn' type='submit'>
-						Submit
+						{loading ? 'Submitting' : 'Submit'}
 					</button>
 				</form>
 			</div>
