@@ -7,11 +7,9 @@ const NavBar = () => {
 		
 
 		<ul className='nav-bar'>
-			<li><Link to="/"><button type="button" className='Home-Button' className='button'>Home</button></Link></li>
-			<li><Link to="/giftionary"><button type="button" className='GIFtionary-Button' className='button'>GIFtionary</button></Link></li>
+			<li className="nav_button"><Link to="/"><button type="button" className='Home-Button' className='button'>Home</button></Link></li>
+			<li className="nav_button"><Link to="/giftionary"><button type="button" className='GIFtionary-Button' className='button'>GIFtionary</button></Link></li>
 		</ul>
-
-		<div className='nav-bar'>This is the header.</div>
 
 
 		</>
