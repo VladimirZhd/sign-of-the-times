@@ -56,12 +56,19 @@ body {
 .nav-bar {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
-	display: inline;
+	padding: 5;
+	min-width: 960px;
 	background-color: 2px solid #596bdf;
 }
 
+.nav_button {
+	width: 200px;
+	border-left: 10px;
+	display: inline;
+}
+
 .button {
+	all: unset;
 	background-color: #8492ec;
 	color: #283cac;
 }
@@ -71,6 +78,10 @@ body {
 	color: #8492ec;
 }
 
+.Gifs {
+	width: 200px;
+    height: 200px;
+}
 /* .Home-Button {} */
 
 /* .GIFtionary-Button {} */

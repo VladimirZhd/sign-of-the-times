@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from 'react';
-import NavBar from './NavBar';
 import {getDocs, collection, query} from "firebase/firestore" 
 import {db} from "../firebase"
 import { map } from '@firebase/util';
@@ -23,8 +22,8 @@ const GIFtionary = () => {
 		<div className='GIFtionary-wrapper'>GIF Dictionary Page</div>
 			{gifs.length > 0 && gifs.map(gif => (
 				<div>
-					<img src={gif.gifUrl} alt="gif of a sign in sign language"/>
-					<p>{gif.translation}</p>
+					<img className="Gifs" src={gif.gifUrl} key={gif.gifUid} alt="gif of a sign in sign language"/>
+					<p className="Translations">{gif.translation}</p>
 				</div>
 			))}
 		</>
