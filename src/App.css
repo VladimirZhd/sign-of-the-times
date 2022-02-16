@@ -9,6 +9,11 @@ body {
 	color: black;
 }
 
+nav {
+	height: 43px;
+	background-color: #ccc;
+}
+
 .admin-wrapper {
 	width: 60%;
 	margin-left: 20%;
@@ -34,7 +39,7 @@ body {
 	padding: 0.5rem;
 	margin-bottom: 20px;
 	border-radius: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid #c2c3c6;
 }
 
 .btn {
@@ -59,28 +64,51 @@ body {
 	padding: 5;
 	min-width: 960px;
 	background-color: 2px solid #596bdf;
+	display: flex;
 }
 
-.nav_button {
+.nav-bar a {
+	text-decoration: none;
+	font-size: 1.2rem;
+	margin-right: 10px;
+	color: black;
+}
+
+.nav-bar a:hover {
+	text-decoration: underline;
+}
+
+.nav-bar li {
+	margin-top: 10px;
+}
+
+/* .nav_button {
 	width: 200px;
 	border-left: 10px;
 	display: inline;
-}
+	margin-right: 20px;
+	color: #fff;
+	text-decoration: none;
+} */
 
-.button {
+/* .button {
 	all: unset;
 	background-color: #8492ec;
 	color: #283cac;
-}
+} */
 
-.button:hover {
+/* .button:hover {
 	background-color: #283cac;
 	color: #8492ec;
+} */
+
+.gifs {
+	width: 200px;
+	height: 200px;
 }
 
-.Gifs {
-	width: 200px;
-    height: 200px;
+.result-wrapper {
+	margin-left: 20px;
 }
 /* .Home-Button {} */
 
