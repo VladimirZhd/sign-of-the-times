@@ -67,7 +67,15 @@ nav {
 	display: flex;
 }
 
-.nav-bar a {
+.navbar-brand {
+	display: flex;
+	align-items: center;
+  }
+  .navbar-brand>img {
+	padding: 7px 14px;
+  }
+
+/* .nav-bar a {
 	text-decoration: none;
 	font-size: 1.2rem;
 	margin-right: 10px;
@@ -80,7 +88,7 @@ nav {
 
 .nav-bar li {
 	margin-top: 10px;
-}
+} */
 
 /* .nav_button {
 	width: 200px;
