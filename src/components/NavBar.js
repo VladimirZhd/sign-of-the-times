@@ -1,6 +1,6 @@
 import React from 'react';
 //import { Container } from 'react'; 
-import logo from './logo512.png';
+import logo from './logo.png';
 import Container from 'react-bootstrap/Container';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
