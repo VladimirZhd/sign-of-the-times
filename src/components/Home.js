@@ -1,9 +1,11 @@
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { db } from '../firebase';
 
 const Home = () => {
 	const [data, setData] = useState({
 		searchPhrase: '',
-		result: null,
+		result: [],
 		error: '',
 		loading: false,
 	});
@@ -16,6 +18,32 @@ const Home = () => {
 	const handleSubmit = async (e) => {
 		try {
 			e.preventDefault();
+			setData({ ...data, loading: true });
+			const q = query(
+				collection(db, 'gifs'),
+				where('translation', '==', searchPhrase)
+			);
+			const snapGif = await getDocs(q);
+			const tempGifs = [];
+			snapGif.docs.forEach((doc) => {
+				tempGifs.push(doc.data());
+			});
+			if (tempGifs.length > 0) {
+				setData({
+					...data,
+					result: tempGifs,
+					searchPhrase: '',
+					loading: false,
+				});
+			} else {
+				setData({
+					...data,
+					error: 'Not found',
+					searchPhrase: '',
+					loading: false,
+					result: [],
+				});
+			}
 		} catch (error) {
 			setData({ ...data, error: error.message });
 		}
@@ -39,12 +67,13 @@ const Home = () => {
 					</button>
 				</form>
 			</div>
-			{result && (
-				<div className='result-container'>
-					<img src='#' alt='#' />
-					<p>result.translation</p>
-				</div>
-			)}
+			{result &&
+				result.map((gif) => (
+					<div className='result-container' key={gif.uid}>
+						<img src={gif.gifUrl} alt={gif.translation} />
+						<p>{gif.translation}</p>
+					</div>
+				))}
 		</>
 	);
 };
