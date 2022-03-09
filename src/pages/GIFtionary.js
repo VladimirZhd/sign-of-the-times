@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { getDocs, collection, query } from 'firebase/firestore';
-import { db } from '../firebase';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import { map } from '@firebase/util';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import friend from './friend.gif';
 import Container from 'react-bootstrap/Container';
+import { useSelector } from 'react-redux';
 
 const GIFtionary = () => {
-	const [gifs, setGifs] = useState([]);
-	useEffect(() => {
-		const gifQuery = query(collection(db, 'gifs'));
-		getDocs(gifQuery).then((querySnapshot) => {
-			const data = [];
-			querySnapshot.forEach((doc) => {
-				data.push(doc.data());
-			});
-			setGifs(data);
-		});
-	}, []);
+	let gifs = useSelector((state) => state.gifs.data);
+
 	return (
 		<>
 			{/* <Card border="secondary" style={{ width: '18rem' }}>
