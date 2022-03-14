@@ -42,6 +42,14 @@ nav {
 	border: 1px solid #c2c3c6;
 }
 
+
+.search {
+	height: 200;
+	width: 700;
+	background-color: dodgerblue;
+	
+}
+
 .btn {
 	height: 43px;
 	width: 100px;
@@ -49,6 +57,7 @@ nav {
 	background-color: dodgerblue;
 	border: none;
 	margin-top: 20px;
+	margin-left: 20px;
 	align-self: center;
 	color: #fff;
 	transition: 0.5s ease-in-out all;
@@ -57,6 +66,8 @@ nav {
 
 .btn:hover {
 	transform: scale(1.05);
+	background-color: rgb(83, 169, 255);
+	color: #fff;
 }
 .nav-bar {
 	list-style-type: none;
