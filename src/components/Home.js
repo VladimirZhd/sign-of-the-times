@@ -60,7 +60,7 @@ const Home = () => {
 				
 				<form onSubmit={handleSubmit}>
 					<div className='search'>
-						<label htmlFor='search'>Search</label>
+						<label htmlFor='search'></label>
 						<input className='search-input'
 							type='text'
 							name='search'
