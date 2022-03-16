@@ -43,16 +43,18 @@ nav {
 }
 
 .btn {
-	height: 43px;
+	height: 33px;
 	width: 100px;
 	border-radius: 10px;
 	background-color: dodgerblue;
 	border: none;
-	margin-top: 20px;
+	/* margin-top: 20px; */
+	margin-left: 5px;
 	align-self: center;
 	color: #fff;
 	transition: 0.5s ease-in-out all;
 	cursor: pointer;
+	grid-column: 2/3;
 }
 
 .btn:hover {
@@ -117,9 +119,6 @@ nav {
 	height: 200px;
 }
 
-.result-wrapper {
-	margin-left: 20px;
+.result-container {
+	margin-left: 38%;
 }
-/* .Home-Button {} */
-
-/* .GIFtionary-Button {} */
