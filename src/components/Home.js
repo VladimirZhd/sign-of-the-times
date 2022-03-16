@@ -57,20 +57,22 @@ const Home = () => {
 	return (
 		<>
 			<div className='search-container'>
+				
 				<form onSubmit={handleSubmit}>
 					<div className='search'>
 						<label htmlFor='search'>Search</label>
-						<input
+						<input className='search-input'
 							type='text'
 							name='search'
 							value={searchPhrase}
 							onChange={handleChange}
 						/>
 					</div>
-					{error && <p className='error'>{error}</p>}
 					<button type='submit' className='btn'>
-						{loading ? 'Searching' : 'Search'}
+						{loading ? '......' : 'Search'}
 					</button>
+					{error && <p className='error'>{error}</p>}
+					
 				</form>
 			</div>
 			{result &&

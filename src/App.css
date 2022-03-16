@@ -14,6 +14,8 @@ nav {
 	background-color: #ccc;
 }
 
+
+
 .admin-wrapper {
 	width: 60%;
 	margin-left: 20%;
@@ -42,26 +44,35 @@ nav {
 	border: 1px solid #c2c3c6;
 }
 
+.search-input {
+	margin-bottom: auto;
+    margin-top: 200px;
+	margin-left: 30%;
+    height: 70px;
+	width: 400px;
+    background-color: #fff;
+    padding: 10px
+}
 
+.search-container {
+	margin-top: 10;
+	z-index: 1;
+}
 .search {
 	height: 200;
 	width: 700;
 	background-color: dodgerblue;
-	
+	z-index: 1;
 }
 
 .btn {
-	height: 43px;
-	width: 100px;
-	border-radius: 10px;
-	background-color: dodgerblue;
-	border: none;
-	margin-top: 20px;
-	margin-left: 20px;
-	align-self: center;
-	color: #fff;
-	transition: 0.5s ease-in-out all;
-	cursor: pointer;
+	height: 40px;
+    width: 70px;
+	display: flex;
+	margin-top: -55px;
+	margin-left: 57%;
+    color: rgb(255, 0, 0);
+    background-color: #536bf6;
 }
 
 .btn:hover {
@@ -128,8 +139,16 @@ nav {
 	height: 200px;
 }
 
+.result-container {
+	margin-top: 20px;
+	margin-left: 20%;
+}
+
+.error {
+	margin-top: 20px;
+}
 .result-wrapper {
-	margin-left: 20px;
+	margin-left: 40%;
 }
 /* .Home-Button {} */
 
