@@ -1,6 +1,17 @@
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { db } from '../firebase';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { map } from '@firebase/util';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import friend from './friend.gif';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/Form'
+
 
 const Home = () => {
 	// Create a state for search
@@ -56,10 +67,11 @@ const Home = () => {
 	};
 	return (
 		<>
+		<Container>
 			<div className='search-container'>
 				<form onSubmit={handleSubmit}>
-					<div className='search'>
-						<label htmlFor='search'>Search</label>
+					<div className='search' >
+						<label htmlFor='search'></label>
 						<input
 							type='text'
 							name='search'
@@ -68,17 +80,29 @@ const Home = () => {
 						/>
 					</div>
 					{error && <p className='error'>{error}</p>}
-					<button type='submit' className='btn'>
+					<button type='submit' >
 						{loading ? 'Searching' : 'Search'}
 					</button>
 				</form>
 			</div>
+			</Container>
 			{result &&
 				result.map((gif) => (
+					<Container >
 					<div className='result-container' key={gif.uid}>
-						<img src={gif.gifUrl} alt={gif.translation} />
-						<p>{gif.translation}</p>
+						<Row>
+						<h1>{gif.translation}</h1>
+						</Row>
+						<Row auto >
+							<Col lg={true}>
+						<img src={gif.gifUrl} alt={gif.translation} style={{height: "40%", width: "auto"}} />
+						</Col>
+						<Col lg={true} >
+						<p>This is the info once we add it to the database</p>
+						</Col>
+						</Row>
 					</div>
+					</Container>
 				))}
 		</>
 	);
