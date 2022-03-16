@@ -46,7 +46,7 @@ nav {
 
 .search-input {
 	margin-bottom: auto;
-    margin-top: 200px;
+    margin-top: 25px;
 	margin-left: 33%;
     height: 70px;
 	width: 400px;
@@ -56,10 +56,10 @@ nav {
 
 .search-container {
 	margin-top: 10;
-	z-index: 1;
+	height: 100px;
 }
 .search {
-	height: 200;
+	height: 100px;
 	width: 700;
 	background-color: dodgerblue;
 	z-index: 1;
@@ -69,8 +69,8 @@ nav {
 	height: 40px;
     width: 70px;
 	display: flex;
-	margin-top: -55px;
-	margin-left: 57%;
+	margin-top: -60px;
+	margin-left: 56.5%;
     color: rgb(255, 0, 0);
     background-color: #536bf6;
 }
@@ -141,7 +141,7 @@ nav {
 
 .result-container {
 	margin-top: 20px;
-	margin-left: 20%;
+	margin-left: 36%;
 }
 
 .error {
