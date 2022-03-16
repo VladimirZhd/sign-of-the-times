@@ -2,6 +2,8 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { db } from '../firebase';
 
+import Card from 'react-bootstrap/Card';
+
 const Home = () => {
 	// Create a state for search
 	const [data, setData] = useState({
@@ -57,11 +59,12 @@ const Home = () => {
 	return (
 		<>
 			<div className='search-container'>
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} className="search-grid">
 					<div className='search'>
-						<label htmlFor='search'>Search</label>
 						<input
+							className='search-input'
 							type='text'
+							placeholder="search"
 							name='search'
 							value={searchPhrase}
 							onChange={handleChange}
@@ -75,9 +78,24 @@ const Home = () => {
 			</div>
 			{result &&
 				result.map((gif) => (
-					<div className='result-container' key={gif.uid}>
-						<img src={gif.gifUrl} alt={gif.translation} />
-						<p>{gif.translation}</p>
+					<div className='result-container'>
+						<Card className ='card'
+								border='secondary'
+								style={{ width: '18rem', margin: '1rem' }}
+								key={gif.uid}>
+								<Card.Img variant='top' src={gif.gifUrl} />
+								<Card.Body>
+									<Card.Title style={{}}>
+										{gif.translation}
+									</Card.Title>
+									{/* <Card.Text>
+						This is a longer card with supporting text below as a natural
+						lead-in to additional content. This content is a little bit longer.
+					  </Card.Text> */}
+								</Card.Body>
+							</Card>
+						{/* <img src={gif.gifUrl} alt={gif.translation} />
+						<p>{gif.translation}</p> */}
 					</div>
 				))}
 		</>
