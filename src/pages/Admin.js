@@ -7,13 +7,14 @@ const Admin = () => {
 	// create state variables for admin page
 	const [data, setData] = useState({
 		translation: '',
+		description: '',
 		error: '',
 		loading: false,
 	});
 	const [image, setImage] = useState(null);
 
 	// Extract variables from state
-	const { translation, error, loading } = data;
+	const { translation, description, error, loading } = data;
 
 	// Handle input change
 	const handleChange = (e) => {
@@ -22,7 +23,6 @@ const Admin = () => {
 
 	// Handle file upload
 	const handleImageChange = (e) => {
-		console.log(e);
 		setImage(e.target.files[0]);
 	};
 
@@ -36,10 +36,14 @@ const Admin = () => {
 			let imagePath = '';
 
 			// check for errors
-			if (!translation || !image) {
+			if (!translation || !image || !description) {
 				setData({ ...data, error: 'All fields are required.' });
 				return;
 			}
+
+			// Split inputs
+			const translationArray = translation.split(' ');
+			const descriptionArray = description.split(' ');
 
 			// If the image was added then upload it to the storage
 			if (image) {
@@ -60,7 +64,8 @@ const Admin = () => {
 			}
 			// Add a new record to the database
 			const newDoc = await addDoc(collection(db, 'gifs'), {
-				translation: translation,
+				translation: translationArray,
+				description: descriptionArray,
 				gifUrl: url,
 				gifPath: imagePath,
 			});
@@ -71,6 +76,7 @@ const Admin = () => {
 			// set state to default
 			setData({
 				translation: '',
+				description: '',
 				error: '',
 				loading: false,
 			});
@@ -91,6 +97,15 @@ const Admin = () => {
 							type='text'
 							name='translation'
 							value={translation}
+							onChange={handleChange}
+						/>
+					</div>
+					<div className='description'>
+						<label htmlFor='description'>Description</label>
+						<input
+							type='text'
+							name='description'
+							value={description}
 							onChange={handleChange}
 						/>
 					</div>
