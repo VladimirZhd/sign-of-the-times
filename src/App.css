@@ -139,6 +139,14 @@ nav {
 	height: 200px;
 }
 
+.namer:hover {
+	opacity: 0;
+}
+
+.namerf:hover {
+	opacity: 0;
+}
+
 .result-container {
 	margin-top: 20px;
 	margin-left: 36%;

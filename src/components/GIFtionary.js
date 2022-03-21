@@ -66,13 +66,13 @@ const GIFtionary = () => {
 							// 		alt='gif of a sign in sign language'
 							// 	/>
 							// </div>
-							<Card
+							<Card className='gif'
 								border='secondary'
 								style={{ width: '18rem', margin: '1rem' }}
 								key={gif.uid}>
-								<Card.Img variant='top' src={gif.gifUrl} />
+								<Card.Img className="namer" variant='top' src={gif.gifUrl} />
 								<Card.Body>
-									<Card.Title style={{}}>
+									<Card.Title className="namerf" style={{}}>
 										{gif.translation}
 									</Card.Title>
 									{/* <Card.Text>
