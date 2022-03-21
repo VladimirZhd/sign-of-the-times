@@ -24,7 +24,7 @@ const Home = () => {
 			// Create a query to search in the database
 			const q = query(
 				collection(db, 'gifs'),
-				where('translation', '==', searchPhrase)
+				where('translation', 'array-contains', searchPhrase)
 			);
 			// Get docs using query
 			const snapGif = await getDocs(q);
@@ -40,6 +40,7 @@ const Home = () => {
 					result: tempGifs,
 					searchPhrase: '',
 					loading: false,
+					error: '',
 				});
 			} else {
 				setData({
@@ -77,7 +78,7 @@ const Home = () => {
 				result.map((gif) => (
 					<div className='result-container' key={gif.uid}>
 						<img src={gif.gifUrl} alt={gif.translation} />
-						<p>{gif.translation}</p>
+						<p>{gif.translation.join(' ')}</p>
 					</div>
 				))}
 		</>
