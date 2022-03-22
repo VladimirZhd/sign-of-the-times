@@ -70,9 +70,10 @@ const GIFtionary = () => {
 								border='secondary'
 								style={{ width: '18rem', margin: '1rem' }}
 								key={gif.uid}>
-								<Card.Img className="namer" variant='top' src={gif.gifUrl} />
+								<Card.Img className="btmimg" variant='top' src={gif.gifUrl} />
+								<Card.Img className="topimg" variant='top' src={'https://docs.google.com/drawings/d/e/2PACX-1vQOf72qNFE4S83F8AOFk32tGyzu7qVIoiv8kYfITU3N8YgYMhSZ69-Z2Gnk6buaPu9krqjziqiM9Va0/pub?w=689&h=690'} />
 								<Card.Body>
-									<Card.Title className="namerf" style={{}}>
+									<Card.Title style={{}}>
 										{gif.translation}
 									</Card.Title>
 									{/* <Card.Text>

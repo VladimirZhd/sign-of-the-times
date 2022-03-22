@@ -139,11 +139,13 @@ nav {
 	height: 200px;
 }
 
-.namer:hover {
-	opacity: 0;
+
+.topimg {
+	margin-top: -262.5px;
+	
 }
 
-.namerf:hover {
+.topimg:hover {
 	opacity: 0;
 }
 
