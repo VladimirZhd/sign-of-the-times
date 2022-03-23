@@ -9,6 +9,7 @@
 }
 body {
 	color: black;
+	background-color: #CFCFCF;
 }
 
 .me-auto:hover {
@@ -16,10 +17,15 @@ body {
 }
 
 nav {
+	margin-left: 5%;
+	margin-right: 5%;
+	border-left-style: outset;
+	border-left-color: rgb(165, 165, 165);
+	border-right-style: inset;
+	border-right-color: rgb(165, 165, 165);
 	height: 43px;
-	background-color: #37A75A !important;
+	background-color: #37A75A;
 }
-
 
 
 .admin-wrapper {
@@ -61,30 +67,30 @@ nav {
 }
 
 .search-container {
+	margin-left: 5%;
+	margin-right: 5%;
 	margin-top: 10;
+	border-left-style: outset;
+	border-left-color: rgb(165, 165, 165);
+	border-right-style: inset;
+	border-right-color: rgb(165, 165, 165);
 	height: 100px;
 }
 .search {
 	height: 100px;
 	width: 700;
-	background-color: dodgerblue;
+	background-color: #f7f7f7;
 	z-index: 1;
 }
 
 .btn {
-	height: 33px;
-	width: 100px;
-	border-radius: 10px;
-	background-color: dodgerblue;
-	border: none;
-	/* margin-top: 20px; */
-	margin-left: 5px;
-	align-self: center;
-	color: #fff;
-	transition: 0.5s ease-in-out all;
-	cursor: pointer;
-	grid-column: 2/3;
-
+	height: 40px;
+    width: 70px;
+	display: flex;
+	margin-top: -60px;
+	margin-left: 60%;
+    color: rgb(255, 0, 0);
+    background-color: #536bf6;
 }
 
 .btn:hover {
@@ -92,14 +98,14 @@ nav {
 	background-color: rgb(83, 169, 255);
 	color: #fff;
 }
-.nav-bar {
+/* .nav-bar {
 	list-style-type: none;
 	margin: 0;
 	padding: 5;
 	min-width: 960px;
 	background-color: 2px solid #596bdf;
 	display: flex;
-}
+} */
 
 
 
@@ -111,40 +117,6 @@ nav {
 	padding: 7px 14px;
   }
 
-/* .nav-bar a {
-	text-decoration: none;
-	font-size: 1.2rem;
-	margin-right: 10px;
-	color: black;
-}
-
-.nav-bar a:hover {
-	text-decoration: underline;
-}
-
-.nav-bar li {
-	margin-top: 10px;
-} */
-
-/* .nav_button {
-	width: 200px;
-	border-left: 10px;
-	display: inline;
-	margin-right: 20px;
-	color: #fff;
-	text-decoration: none;
-} */
-
-/* .button {
-	all: unset;
-	background-color: #8492ec;
-	color: #283cac;
-} */
-
-/* .button:hover {
-	background-color: #283cac;
-	color: #8492ec;
-} */
 
 .gifs {
 	width: 200px;
@@ -162,8 +134,22 @@ nav {
 }
 
 .result-container {
-	margin-top: 20px;
+	padding-top: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-bottom: 5%;
+	border-left-style: outset;
+	border-left-color: rgb(165, 165, 165);
+	border-right-style: inset;
+	border-right-color: rgb(165, 165, 165);
+	border-bottom-style: inset;
+	border-bottom-color: rgb(165, 165, 165);
+	background-color: #F7F7F7;
+}
+
+.result {
 	margin-left: 36%;
+	margin-bottom: 10px;
 }
 
 .error {
