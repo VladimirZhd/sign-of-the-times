@@ -20,6 +20,8 @@ nav {
 	background-color: #37A75A !important;
 }
 
+
+
 .admin-wrapper {
 	width: 60%;
 	margin-left: 20%;
@@ -48,6 +50,27 @@ nav {
 	border: 1px solid #c2c3c6;
 }
 
+.search-input {
+	margin-bottom: auto;
+    margin-top: 25px;
+	margin-left: 33%;
+    height: 70px;
+	width: 400px;
+    background-color: #fff;
+    padding: 10px
+}
+
+.search-container {
+	margin-top: 10;
+	height: 100px;
+}
+.search {
+	height: 100px;
+	width: 700;
+	background-color: dodgerblue;
+	z-index: 1;
+}
+
 .btn {
 	height: 33px;
 	width: 100px;
@@ -61,10 +84,13 @@ nav {
 	transition: 0.5s ease-in-out all;
 	cursor: pointer;
 	grid-column: 2/3;
+
 }
 
 .btn:hover {
 	transform: scale(1.05);
+	background-color: rgb(83, 169, 255);
+	color: #fff;
 }
 .nav-bar {
 	list-style-type: none;
@@ -125,6 +151,24 @@ nav {
 	height: 200px;
 }
 
+
+.topimg {
+	margin-top: -262.5px;
+	
+}
+
+.topimg:hover {
+	opacity: 0;
+}
+
 .result-container {
-	margin-left: 38%;
+	margin-top: 20px;
+	margin-left: 36%;
+}
+
+.error {
+	margin-top: 20px;
+}
+.result-wrapper {
+	margin-left: 40%;
 }
