@@ -1,6 +1,8 @@
 * {
 	box-sizing: border-box;
 }
+
+
 .home-wrapper {
 	padding-left: 150px;
 	background-color: red;
@@ -9,9 +11,13 @@ body {
 	color: black;
 }
 
+.me-auto:hover {
+	background-color: #43c26b;
+}
+
 nav {
 	height: 43px;
-	background-color: #ccc;
+	background-color: #37A75A !important;
 }
 
 
@@ -66,13 +72,19 @@ nav {
 }
 
 .btn {
-	height: 40px;
-    width: 70px;
-	display: flex;
-	margin-top: -60px;
-	margin-left: 56.5%;
-    color: rgb(255, 0, 0);
-    background-color: #536bf6;
+	height: 33px;
+	width: 100px;
+	border-radius: 10px;
+	background-color: dodgerblue;
+	border: none;
+	/* margin-top: 20px; */
+	margin-left: 5px;
+	align-self: center;
+	color: #fff;
+	transition: 0.5s ease-in-out all;
+	cursor: pointer;
+	grid-column: 2/3;
+
 }
 
 .btn:hover {
@@ -160,6 +172,3 @@ nav {
 .result-wrapper {
 	margin-left: 40%;
 }
-/* .Home-Button {} */
-
-/* .GIFtionary-Button {} */
