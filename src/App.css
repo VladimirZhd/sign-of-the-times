@@ -1,6 +1,8 @@
 * {
 	box-sizing: border-box;
 }
+
+
 .home-wrapper {
 	padding-left: 150px;
 	background-color: red;
@@ -9,9 +11,13 @@ body {
 	color: black;
 }
 
+.me-auto:hover {
+	background-color: #43c26b;
+}
+
 nav {
 	height: 43px;
-	background-color: #ccc;
+	background-color: #37A75A !important;
 }
 
 .admin-wrapper {
