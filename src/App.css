@@ -70,24 +70,19 @@ nav {
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 10;
+	background-color: #CFCFCF;
 	border-left-style: outset;
 	border-left-color: rgb(165, 165, 165);
 	border-right-style: inset;
 	border-right-color: rgb(165, 165, 165);
 	height: 100px;
 }
-.search {
-	height: 100px;
-	width: 700;
-	background-color: #CFCFCF;
-	z-index: 1;
-}
 
 .btn {
 	height: 40px;
     width: 70px;
 	display: flex;
-	margin-top: -60px;
+	margin-top: -5%;
 	margin-left: 60%;
     color: #0184BC;
 }
@@ -109,10 +104,12 @@ nav {
 
 .search {
 	color:#596bdf;
-	margin-left: auto;
+	margin-left: 21%;
 	margin-right: auto;
 	text-align: center;
 	display: inline-block;
+	height: 100px;
+	z-index: 1;
 }
 
 .outline-results {

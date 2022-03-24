@@ -13,8 +13,6 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/Form'
 
 
-import Card from 'react-bootstrap/Card';
-
 const Home = () => {
 	// Create a state for search
 	const [data, setData] = useState({
@@ -70,7 +68,7 @@ const Home = () => {
 	};
 	return (
 		<>
-		<Container>
+			
 			<div className='search-container'>
 				<form onSubmit={handleSubmit} className="search-grid">
 					<div className='search'>
@@ -90,11 +88,11 @@ const Home = () => {
 					</button>
 				</form>
 			</div>
-			</Container>
+
 			{result &&
 				result.map((gif) => (
-					<Container >
-					<div className='result-container' key={gif.uid}>
+					<Container className='result-container'>
+					<div key={gif.uid}>
 						<Row style={{paddingBottom: '0.5em', paddingTop: '1em'}}>
 						<Col ></Col>
 						<Col sm={6} className='outline-results'><h1 >{gif.translation}</h1></Col>
