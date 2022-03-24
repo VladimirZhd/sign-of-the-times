@@ -90,16 +90,21 @@ const Home = () => {
 				result.map((gif) => (
 					<Container >
 					<div className='result-container' key={gif.uid}>
-						<Row>
-						<h1>{gif.translation}</h1>
+						<Row style={{paddingBottom: '0.5em', paddingTop: '1em'}}>
+						<Col ></Col>
+						<Col sm={6} className='outline-results'><h1 >{gif.translation}</h1></Col>
+						
+						<Col ></Col>
 						</Row>
-						<Row auto >
-							<Col lg={true}>
-						<img src={gif.gifUrl} alt={gif.translation} style={{height: "40%", width: "auto"}} />
+						<Row >
+						<Col></Col>
+							<Col style={{backgroundColor:"#0184BC"}}>
+						<img src={gif.gifUrl} alt={gif.translation} style={{height: "100%", width: "100%", marginRight:"20em"}}/>
 						</Col>
-						<Col lg={true} >
+						<Col className='outline-results'>
 						<p>This is the info once we add it to the database</p>
 						</Col>
+						<Col></Col>
 						</Row>
 					</div>
 					</Container>

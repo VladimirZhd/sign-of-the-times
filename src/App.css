@@ -75,9 +75,13 @@ nav {
 	display: inline-block;
 }
 
+.outline-results {
+	outline-Style:solid;
+	outline-color:#bababa; 
+	
+}
 
 
-  
 
 
 .navbar-brand {
