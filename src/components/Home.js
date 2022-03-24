@@ -88,6 +88,7 @@ const Home = () => {
 						</Col>
 						<Col></Col>
 						</Row>
+
 					</div>
 					</Container>
 				))}
