@@ -13,6 +13,8 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/Form'
 
 
+import Card from 'react-bootstrap/Card';
+
 const Home = () => {
 	// Create a state for search
 	const [data, setData] = useState({
@@ -35,7 +37,7 @@ const Home = () => {
 			// Create a query to search in the database
 			const q = query(
 				collection(db, 'gifs'),
-				where('translation', '==', searchPhrase)
+				where('translation', 'array-contains', searchPhrase)
 			);
 			// Get docs using query
 			const snapGif = await getDocs(q);
@@ -51,11 +53,12 @@ const Home = () => {
 					result: tempGifs,
 					searchPhrase: '',
 					loading: false,
+					error: '',
 				});
 			} else {
 				setData({
 					...data,
-					error: 'Not found',
+					error: '',
 					searchPhrase: '',
 					loading: false,
 					result: [],
@@ -69,19 +72,21 @@ const Home = () => {
 		<>
 		<Container>
 			<div className='search-container'>
-				<form onSubmit={handleSubmit}>
-					<div className='search' >
-						<label htmlFor='search'></label>
+				<form onSubmit={handleSubmit} className="search-grid">
+					<div className='search'>
 						<input
+							className='search-input'
 							type='text'
+							placeholder="search"
 							name='search'
 							value={searchPhrase}
 							onChange={handleChange}
 						/>
 					</div>
 					{error && <p className='error'>{error}</p>}
-					<button type='submit' >
-						{loading ? 'Searching' : 'Search'}
+
+					<button type='submit' className='btn'>
+						{loading ? '........' : 'Search'}
 					</button>
 				</form>
 			</div>
@@ -106,6 +111,7 @@ const Home = () => {
 						</Col>
 						<Col></Col>
 						</Row>
+
 					</div>
 					</Container>
 				))}
