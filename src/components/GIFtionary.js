@@ -26,17 +26,24 @@ const GIFtionary = () => {
 					<div className='giftionary-wrapper'></div>
 					{gifs.length > 0 &&
 						gifs.map((gif) => (
-							<Link
-								to={`/gif/${gif.uid}`}
-								key={gif.uid}
-								style={{
-									color: 'black',
-									textDecoration: 'none',
-								}}>
+							<Link to={`/gif/${gif.uid}`}>
 								<Card
+									className='gif'
 									border='secondary'
-									style={{ width: '18rem', margin: '1rem' }}>
-									<Card.Img variant='top' src={gif.gifUrl} />
+									style={{ width: '18rem', margin: '1rem' }}
+									key={gif.uid}>
+									<Card.Img
+										className='btmimg'
+										variant='top'
+										src={gif.gifUrl}
+									/>
+									<Card.Img
+										className='topimg'
+										variant='top'
+										src={
+											'https://docs.google.com/drawings/d/e/2PACX-1vQOf72qNFE4S83F8AOFk32tGyzu7qVIoiv8kYfITU3N8YgYMhSZ69-Z2Gnk6buaPu9krqjziqiM9Va0/pub?w=689&h=690'
+										}
+									/>
 									<Card.Body>
 										<Card.Title style={{}}>
 											{gif.translation.join(' ')}
