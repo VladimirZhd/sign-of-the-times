@@ -4,6 +4,7 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import GIFtionary from './components/GIFtionary';
 import Admin from './pages/Admin';
+import Details from './pages/Details';
 function App() {
 	return (
 		<>
@@ -13,6 +14,7 @@ function App() {
 					<Route path='/admin' element={<Admin />} />
 					<Route path='/' element={<Home />} />
 					<Route path='/giftionary' element={<GIFtionary />} />
+					<Route path='/gif/:id' element={<Details />} />
 				</Routes>
 			</BrowserRouter>
 		</>
