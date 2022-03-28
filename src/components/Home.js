@@ -1,6 +1,17 @@
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { db } from '../firebase';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { map } from '@firebase/util';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import friend from './friend.gif';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/Form'
+
 
 const Home = () => {
 	// Create a state for search
@@ -45,7 +56,7 @@ const Home = () => {
 			} else {
 				setData({
 					...data,
-					error: 'Not found',
+					error: '',
 					searchPhrase: '',
 					loading: false,
 					result: [],
@@ -57,29 +68,50 @@ const Home = () => {
 	};
 	return (
 		<>
+			
 			<div className='search-container'>
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} className="search-grid">
 					<div className='search'>
-						<label htmlFor='search'>Search</label>
 						<input
+							className='search-input'
 							type='text'
+							placeholder="search"
 							name='search'
 							value={searchPhrase}
 							onChange={handleChange}
 						/>
 					</div>
 					{error && <p className='error'>{error}</p>}
+
 					<button type='submit' className='btn'>
-						{loading ? 'Searching' : 'Search'}
+						{loading ? '........' : 'Search'}
 					</button>
 				</form>
 			</div>
+
 			{result &&
 				result.map((gif) => (
-					<div className='result-container' key={gif.uid}>
-						<img src={gif.gifUrl} alt={gif.translation} />
-						<p>{gif.translation.join(' ')}</p>
+					<Container fluid='90%' className='result-container'>
+					<div key={gif.uid}>
+						<Row style={{paddingBottom: '0.5em', paddingTop: '1em'}}>
+						<Col ></Col>
+						<Col sm={6} className='outline-results'><h1 >{gif.translation}</h1></Col>
+						
+						<Col ></Col>
+						</Row>
+						<Row >
+						<Col md={3}></Col>
+							<Col md={3} style={{backgroundColor:"#0184BC"}}>
+						<img src={gif.gifUrl} alt={gif.translation} style={{height: "auto", width: "100%"}}/>
+						</Col>
+						<Col md={3} className='outline-results'>
+						<p>This is the info once we add it to the database</p>
+						</Col>
+						<Col md={2}></Col>
+						</Row>
+
 					</div>
+					</Container>
 				))}
 		</>
 	);
