@@ -26,11 +26,11 @@ const GIFtionary = () => {
 					<div className='giftionary-wrapper'></div>
 					{gifs.length > 0 &&
 						gifs.map((gif) => (
-							<Link to={`/gif/${gif.uid}`}>
+							<Link to={`/gif/${gif.uid}`}
+							style={{ width: '18rem', margin: '1rem' }}>
 								<Card
 									className='gif'
 									border='secondary'
-									style={{ width: '18rem', margin: '1rem' }}
 									key={gif.uid}>
 									<Card.Img
 										className='btmimg'

@@ -118,7 +118,7 @@ const Admin = () => {
 						/>
 					</div>
 					{error && <p className='error'>{error}</p>}
-					<button className='btn' type='submit'>
+					<button className='admin-btn' type='submit'>
 						{loading ? 'Submitting' : 'Submit'}
 					</button>
 				</form>
