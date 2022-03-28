@@ -4,7 +4,6 @@ import { db } from '../firebase';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import { Link } from 'react-router-dom';
 
 const GIFtionary = () => {
 	const [gifs, setGifs] = useState([]);
@@ -18,7 +17,6 @@ const GIFtionary = () => {
 			setGifs(data);
 		});
 	}, []);
-
 	return (
 		<>
 			<Container>
@@ -26,11 +24,11 @@ const GIFtionary = () => {
 					<div className='giftionary-wrapper'></div>
 					{gifs.length > 0 &&
 						gifs.map((gif) => (
-							<Link to={`/gif/${gif.uid}`}>
+							<Link to={`/gif/${gif.uid}`}
+							style={{ width: '18rem', margin: '1rem' }}>
 								<Card
 									className='gif'
 									border='secondary'
-									style={{ width: '18rem', margin: '1rem' }}
 									key={gif.uid}>
 									<Card.Img
 										className='btmimg'

@@ -2,14 +2,13 @@
 	box-sizing: border-box;
 }
 
-
 .home-wrapper {
 	padding-left: 150px;
 	background-color: red;
 }
 body {
 	color: black;
-	background-color: #4E4A59;
+	background-color: #4e4a59;
 }
 
 .me-auto:hover {
@@ -24,9 +23,8 @@ nav {
 	border-right-style: inset;
 	border-right-color: rgb(165, 165, 165);
 	height: 43px;
-	background-color: #37A75A;
+	background-color: #37a75a;
 }
-
 
 .admin-wrapper {
 	width: 60%;
@@ -56,21 +54,25 @@ nav {
 	border: 1px solid #c2c3c6;
 }
 
+.admin-btn {
+	
+}
+
 .search-input {
 	margin-bottom: auto;
-    margin-top: 25px;
+	margin-top: 25px;
 	margin-left: 33%;
-    height: 70px;
+	height: 70px;
 	width: 400px;
-    background-color: #fff;
-    padding: 10px
+	background-color: #fff;
+	padding: 10px;
 }
 
 .search-container {
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 10;
-	background-color: #CFCFCF;
+	background-color: #cfcfcf;
 	border-left-style: outset;
 	border-left-color: rgb(165, 165, 165);
 	border-right-style: inset;
@@ -80,11 +82,11 @@ nav {
 
 .btn {
 	height: 40px;
-    width: 70px;
+	width: 70px;
 	display: flex;
 	margin-top: -5%;
-	margin-left: 60%;
-    color: #0184BC;
+	/* margin-left: 33%; */
+	color: #0184bc;
 }
 
 .btn-search {
@@ -105,14 +107,13 @@ nav {
 
 .btn-search:hover {
 	transform: scale(1.05);
-	background-color: #4DA167;
+	background-color: #4da167;
 	color: white;
-
 }
 
 
 .search {
-	color:#596bdf;
+	color: #596bdf;
 	margin-left: 21%;
 	margin-right: auto;
 	text-align: center;
@@ -127,27 +128,21 @@ nav {
 	
 }
 
-
-
-
 .navbar-brand {
 	display: flex;
 	align-items: center;
-  }
-  .navbar-brand>img {
+}
+.navbar-brand > img {
 	padding: 7px 14px;
-  }
-
+}
 
 .gifs {
 	width: 200px;
 	height: 200px;
 }
 
-
 .topimg {
 	margin-top: -262.5px;
-	
 }
 
 .topimg:hover {
@@ -165,7 +160,7 @@ nav {
 	border-right-color: rgb(165, 165, 165);
 	border-bottom-style: inset;
 	border-bottom-color: rgb(165, 165, 165);
-	background-color: #CFCFCF;
+	background-color: #cfcfcf;
 }
 
 .result-container-detail {
@@ -186,4 +181,12 @@ nav {
 }
 .result-wrapper {
 	margin-left: 40%;
+}
+
+.topimg {
+	margin-top: -262.5px;
+}
+
+.topimg:hover {
+	opacity: 0;
 }
