@@ -83,7 +83,7 @@ nav {
     width: 70px;
 	display: flex;
 	margin-top: -5%;
-	margin-left: 60%;
+	/* margin-left: 33%; */
     color: #0184BC;
 }
 
@@ -113,8 +113,10 @@ nav {
 }
 
 .outline-results {
-	outline-Style:solid;
-	outline-color:#bababa; 
+	/* outline-Style:solid;
+	outline-color:#bababa;  */
+	border-style: inset;
+	
 	
 }
 
