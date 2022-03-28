@@ -69,7 +69,7 @@ nav {
 	height: 40px;
     width: 70px;
 	display: flex;
-	margin-top: -60px;
+	margin-top: -4.5%;
 	margin-left: 56.5%;
     color: rgb(255, 0, 0);
     background-color: #536bf6;
@@ -160,6 +160,11 @@ nav {
 .result-wrapper {
 	margin-left: 40%;
 }
+
+.gif {
+	background-color: white;
+}
+
 /* .Home-Button {} */
 
 /* .GIFtionary-Button {} */

@@ -42,14 +42,15 @@ const Home = () => {
 					result: tempGifs,
 					searchPhrase: '',
 					loading: false,
+					error: '',
 				});
 			} else {
 				setData({
 					...data,
-					error: 'Not found',
 					searchPhrase: '',
 					loading: false,
 					result: [],
+					error: '',
 				});
 			}
 		} catch (error) {
