@@ -26,7 +26,7 @@ const Home = () => {
 			// Create a query to search in the database
 			const q = query(
 				collection(db, 'gifs'),
-				where('translation', '==', searchPhrase)
+				where('translation', 'array-contains', searchPhrase)
 			);
 			// Get docs using query
 			const snapGif = await getDocs(q);
@@ -79,24 +79,30 @@ const Home = () => {
 			</div>
 			{result &&
 				result.map((gif) => (
-					<div className='result-container'>
-						<Card className ='card'
-								border='secondary'
-								style={{ width: '18rem', margin: '1rem' }}
-								key={gif.uid}>
-								<Card.Img variant='top' src={gif.gifUrl} />
-								<Card.Body>
-									<Card.Title style={{}}>
-										{gif.translation}
-									</Card.Title>
-									{/* <Card.Text>
-						This is a longer card with supporting text below as a natural
-						lead-in to additional content. This content is a little bit longer.
-					  </Card.Text> */}
-								</Card.Body>
-							</Card>
-						{/* <img src={gif.gifUrl} alt={gif.translation} />
-						<p>{gif.translation}</p> */}
+
+// 					<div className='result-container'>
+// 						<Card className ='card'
+// 								border='secondary'
+// 								style={{ width: '18rem', margin: '1rem' }}
+// 								key={gif.uid}>
+// 								<Card.Img variant='top' src={gif.gifUrl} />
+// 								<Card.Body>
+// 									<Card.Title style={{}}>
+// 										{gif.translation}
+// 									</Card.Title>
+// 									{/* <Card.Text>
+// 						This is a longer card with supporting text below as a natural
+// 						lead-in to additional content. This content is a little bit longer.
+// 					  </Card.Text> */}
+// 								</Card.Body>
+// 							</Card>
+// 						{/* <img src={gif.gifUrl} alt={gif.translation} />
+// 						<p>{gif.translation}</p> */}
+
+					<div className='result-container' key={gif.uid}>
+						<img src={gif.gifUrl} alt={gif.translation} />
+						<p>{gif.translation.join(' ')}</p>
+
 					</div>
 				))}
 		</>
