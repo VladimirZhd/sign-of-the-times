@@ -4,6 +4,7 @@ import { db } from '../firebase';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import { Link } from 'react-router-dom';
 
 const GIFtionary = () => {
 	const [gifs, setGifs] = useState([]);

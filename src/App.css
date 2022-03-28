@@ -26,6 +26,18 @@ nav {
 	background-color: #37a75a;
 }
 
+.admin-container {
+	width: 90%;
+	margin-left: 5%;
+	border-left-style: outset;
+	border-left-color: rgb(165, 165, 165);
+	border-right-style: inset;
+	border-right-color: rgb(165, 165, 165);
+	border-bottom-style: inset;
+	border-bottom-color: rgb(165, 165, 165);
+	background-color: #cfcfcf;
+}
+
 .admin-wrapper {
 	width: 60%;
 	margin-left: 20%;
@@ -42,8 +54,9 @@ nav {
 
 .admin-form div {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1;
+	/* flex-direction: column; */
 }
 
 .admin-form input[type='text'] {
@@ -54,8 +67,34 @@ nav {
 	border: 1px solid #c2c3c6;
 }
 
+.gif-selection {
+	display: grid;
+	/* -ms-grid-row-span: 5px; */
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: 50px 50px;
+}
+.gif-btn {
+	grid-column: 1;
+}
+
+.image-btn {
+	grid-column: 4;
+}
 .admin-btn {
-	
+	height: 40px;
+	width: 100%;
+	grid-column: 1/5;
+	margin-top: 10px;
+	grid-row: 2;
+	color: #000000;
+	background-color: #a7a7a7;
+}
+
+.admin-btn:hover {
+	/* To stop button moving, remove the margin-top below */
+	margin-top: 40px;
+	background-color: #4da167;
+	color: #fff;
 }
 
 .search-input {
