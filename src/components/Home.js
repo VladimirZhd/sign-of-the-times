@@ -83,7 +83,7 @@ const Home = () => {
 					</div>
 					{error && <p className='error'>{error}</p>}
 
-					<button type='submit' className='btn'>
+					<button type='submit' className='btn-search'>
 						{loading ? '........' : 'Search'}
 					</button>
 				</form>
@@ -91,23 +91,23 @@ const Home = () => {
 
 			{result &&
 				result.map((gif) => (
-					<Container className='result-container'>
+					<Container fluid='90%' className='result-container'>
 					<div key={gif.uid}>
-						<Row style={{paddingBottom: '0.5em', paddingTop: '1em'}}>
+						<Row style={{paddingBottom: '0.3em', paddingTop: '1em'}}>
 						<Col ></Col>
 						<Col sm={6} className='outline-results'><h1 >{gif.translation}</h1></Col>
 						
 						<Col ></Col>
 						</Row>
 						<Row >
-						<Col></Col>
-							<Col style={{backgroundColor:"#0184BC"}}>
-						<img src={gif.gifUrl} alt={gif.translation} style={{height: "100%", width: "100%", marginRight:"20em"}}/>
+						<Col md={3}></Col>
+							<Col md={3} style={{backgroundColor:"#0184BC"}}>
+						<img src={gif.gifUrl} alt={gif.translation} style={{height: "auto", width: "100%"}}/>
 						</Col>
-						<Col className='outline-results'>
+						<Col md={3} className='outline-results'>
 						<p>This is the info once we add it to the database</p>
 						</Col>
-						<Col></Col>
+						<Col md={2}></Col>
 						</Row>
 
 					</div>
