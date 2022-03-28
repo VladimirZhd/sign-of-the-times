@@ -11,6 +11,7 @@ const Admin = () => {
 		error: '',
 		loading: false,
 	});
+	const [gif, setGif] = useState(null);
 	const [image, setImage] = useState(null);
 
 	// Extract variables from state
@@ -19,6 +20,11 @@ const Admin = () => {
 	// Handle input change
 	const handleChange = (e) => {
 		setData({ ...data, [e.target.name]: e.target.value });
+	};
+
+	// Handle file upload
+	const handleGifChange = (e) => {
+		setGif(e.target.files[0]);
 	};
 
 	// Handle file upload
@@ -32,9 +38,10 @@ const Admin = () => {
 			setData({ ...data, loading: true });
 			// Prevent page reload on submit
 			e.preventDefault();
-			let url = '';
+			let imageUrl = '';
 			let imagePath = '';
-
+			let gifPath = '';
+			let gifUrl = '';
 			// check for errors
 			if (!translation || !image || !description) {
 				setData({ ...data, error: 'All fields are required.' });
@@ -50,7 +57,7 @@ const Admin = () => {
 				// Create image reference
 				const imageRef = ref(
 					storage,
-					`gifs/${new Date().getTime()}-${image.name}`
+					`images/${new Date().getTime()}-${image.name}`
 				);
 				// save snapshot of uploaded image
 				const snap = await uploadBytes(imageRef, image);
@@ -60,14 +67,32 @@ const Admin = () => {
 				);
 				// save image path to delete gif if record is deleted in the database
 				imagePath = snap.ref.fullPath;
-				url = dlUrl;
+				imageUrl = dlUrl;
+			}
+			if (gif) {
+				// Create image reference
+				const gifRef = ref(
+					storage,
+					`gifs/${new Date().getTime()}-${gif.name}`
+				);
+				// save snapshot of uploaded image
+				const snap = await uploadBytes(gifRef, gif);
+				// save download url to use it in `img` tag to display gif
+				const dlUrl = await getDownloadURL(
+					ref(storage, snap.ref.fullPath)
+				);
+				// save image path to delete gif if record is deleted in the database
+				gifPath = snap.ref.fullPath;
+				gifUrl = dlUrl;
 			}
 			// Add a new record to the database
 			const newDoc = await addDoc(collection(db, 'gifs'), {
 				translation: translationArray,
 				description: descriptionArray,
-				gifUrl: url,
-				gifPath: imagePath,
+				gifUrl: gifUrl,
+				gifPath: gifPath,
+				imageUrl: imageUrl,
+				imagePath: imagePath,
 			});
 			// Update the record to include auto created unique id
 			await updateDoc(doc(db, 'gifs', newDoc.id), {
@@ -82,6 +107,7 @@ const Admin = () => {
 			});
 			// set image to null
 			setImage(null);
+			setGif(null);
 		} catch (error) {
 			setData({ ...data, error: error.message });
 		}
@@ -110,10 +136,22 @@ const Admin = () => {
 						/>
 					</div>
 					<div className='gif'>
+						<label htmlFor='gif'>Gif</label>
 						<input
 							type='file'
 							accept='image/*'
 							name='gif'
+							value={gif}
+							onChange={handleGifChange}
+						/>
+					</div>
+					<div className='image'>
+						<label htmlFor='image'>Image</label>
+						<input
+							type='file'
+							accept='image/*'
+							name='image'
+							value={image}
 							onChange={handleImageChange}
 						/>
 					</div>
