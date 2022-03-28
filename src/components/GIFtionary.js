@@ -28,7 +28,18 @@ const GIFtionary = () => {
 								border='secondary'
 								style={{ width: '18rem', margin: '1rem' }}
 								key={gif.uid}>
-								<Card.Img variant='top' src={gif.gifUrl} />
+								<Card.Img
+									className='btnimg'
+									variant='top'
+									src={gif.gifUrl}
+								/>
+								{gif.imageUrl && (
+									<Card.Img
+										className='topimg'
+										variant='top'
+										src={gif.imageUrl}
+									/>
+								)}
 								<Card.Body>
 									<Card.Title style={{}}>
 										{gif.translation}
