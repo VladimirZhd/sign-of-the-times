@@ -91,7 +91,7 @@ const Home = () => {
 
 			{result &&
 				result.map((gif) => (
-					<Container className='result-container'>
+					<Container fluid='90%' className='result-container'>
 					<div key={gif.uid}>
 						<Row style={{paddingBottom: '0.5em', paddingTop: '1em'}}>
 						<Col ></Col>
@@ -100,14 +100,14 @@ const Home = () => {
 						<Col ></Col>
 						</Row>
 						<Row >
-						<Col></Col>
-							<Col style={{backgroundColor:"#0184BC"}}>
-						<img src={gif.gifUrl} alt={gif.translation} style={{height: "100%", width: "100%", marginRight:"20em"}}/>
+						<Col md={3}></Col>
+							<Col md={3} style={{backgroundColor:"#0184BC"}}>
+						<img src={gif.gifUrl} alt={gif.translation} style={{height: "auto", width: "100%"}}/>
 						</Col>
-						<Col className='outline-results'>
+						<Col md={3} className='outline-results'>
 						<p>This is the info once we add it to the database</p>
 						</Col>
-						<Col></Col>
+						<Col md={2}></Col>
 						</Row>
 
 					</div>

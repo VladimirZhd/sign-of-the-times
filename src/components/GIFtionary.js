@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { getDocs, collection, query } from 'firebase/firestore';
 import { db } from '../firebase';
 import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { map } from '@firebase/util';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 const GIFtionary = () => {
@@ -17,34 +20,24 @@ const GIFtionary = () => {
 			setGifs(data);
 		});
 	}, []);
-
 	return (
 		<>
+		
 			<Container>
 				<Row>
 					<div className='giftionary-wrapper'></div>
 					{gifs.length > 0 &&
 						gifs.map((gif) => (
-							// <div key={gif.uid} className='result-wrapper'>
-							// 	<p className='Translations'>{gif.translation}</p>
-							// 	<img
-							// 		className='gifs'
-							// 		src={gif.gifUrl}
-							// 		key={gif.gifUid}
-							// 		alt='gif of a sign in sign language'
-							// 	/>
-							// </div>
-							<Card className='gif'
-
+							<Card
 								border='secondary'
 								style={{ width: '18rem', margin: '1rem' }}
 								key={gif.uid}>
-								<Card.Img className="btmimg" variant='top' src={gif.gifUrl} />
-								<Card.Img className="topimg" variant='top' src={'https://docs.google.com/drawings/d/e/2PACX-1vQOf72qNFE4S83F8AOFk32tGyzu7qVIoiv8kYfITU3N8YgYMhSZ69-Z2Gnk6buaPu9krqjziqiM9Va0/pub?w=689&h=690'} />
+								<Card.Img variant='top' src={gif.gifUrl} />
 								<Card.Body>
 									<Card.Title style={{}}>
-										{gif.translation.join(' ')}
+										{gif.translation}
 									</Card.Title>
+
 								</Card.Body>
 							</Card>
 						))}
