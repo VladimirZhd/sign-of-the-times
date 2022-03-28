@@ -141,7 +141,6 @@ const Admin = () => {
 							type='file'
 							accept='image/*'
 							name='gif'
-							value={gif}
 							onChange={handleGifChange}
 						/>
 					</div>
@@ -151,7 +150,6 @@ const Admin = () => {
 							type='file'
 							accept='image/*'
 							name='image'
-							value={image}
 							onChange={handleImageChange}
 						/>
 					</div>
