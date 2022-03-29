@@ -27,16 +27,14 @@ const GIFtionary = () => {
 						gifs.map((gif) => (
 							<Link
 								to={`/gif/${gif.uid}`}
+								key={gif.uid}
 								style={{
 									width: '18rem',
 									margin: '1rem',
 									color: 'black',
 									textDecoration: 'none',
 								}}>
-								<Card
-									className='gif'
-									border='secondary'
-									key={gif.uid}>
+								<Card className='gif' border='secondary'>
 									<Card.Img
 										className='btmimg'
 										variant='top'
