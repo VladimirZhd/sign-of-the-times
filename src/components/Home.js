@@ -83,7 +83,7 @@ const Home = () => {
 					</div>
 					{error && <p className='error'>{error}</p>}
 
-					<button type='submit' className='btn'>
+					<button type='submit' className='btn-search'>
 						{loading ? '........' : 'Search'}
 					</button>
 				</form>
@@ -93,7 +93,7 @@ const Home = () => {
 				result.map((gif) => (
 					<Container fluid='90%' className='result-container'>
 					<div key={gif.uid}>
-						<Row style={{paddingBottom: '0.5em', paddingTop: '1em'}}>
+						<Row style={{paddingBottom: '0.3em', paddingTop: '1em'}}>
 						<Col ></Col>
 						<Col sm={6} className='outline-results'><h1 >{gif.translation}</h1></Col>
 						
