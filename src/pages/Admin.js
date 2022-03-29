@@ -114,6 +114,7 @@ const Admin = () => {
 	};
 	return (
 		<>
+			<div className='admin-container'>
 			<div className='admin-wrapper'>
 				<h2 className='admin-title'>Add a new sign</h2>
 				<form className='admin-form' onSubmit={handleSubmit}>
@@ -135,29 +136,36 @@ const Admin = () => {
 							onChange={handleChange}
 						/>
 					</div>
-					<div className='gif'>
-						<label htmlFor='gif'>Gif</label>
-						<input
-							type='file'
-							accept='image/*'
-							name='gif'
-							onChange={handleGifChange}
-						/>
+					<div className='gif-selection'>
+						<div className='gif-btn'>
+							<label htmlFor='gif'>Gif</label>
+							<input
+								type='file'
+								accept='image/*'
+								name='gif'
+								value={gif}
+								onChange={handleGifChange}
+							/>
+						</div>
+						<div className='image-btn'>
+							<label htmlFor='image'>Image</label>
+							<input
+								type='file'
+								accept='image/*'
+								name='image'
+								value={image}
+								onChange={handleImageChange}
+							/>
+						</div>
+					
+						{error && <p className='error'>{error}</p>}
+						<button className='admin-btn' type='submit'>
+							{loading ? 'Submitting' : 'Submit'}
+						</button>
+
 					</div>
-					<div className='image'>
-						<label htmlFor='image'>Image</label>
-						<input
-							type='file'
-							accept='image/*'
-							name='image'
-							onChange={handleImageChange}
-						/>
-					</div>
-					{error && <p className='error'>{error}</p>}
-					<button className='admin-btn' type='submit'>
-						{loading ? 'Submitting' : 'Submit'}
-					</button>
 				</form>
+			</div>
 			</div>
 		</>
 	);
