@@ -92,7 +92,7 @@ nav {
 
 .admin-btn:hover {
 	/* To stop button moving, remove the margin-top below */
-	margin-top: 40px;
+	/* margin-top: 40px; */
 	background-color: #4da167;
 	color: #fff;
 }
@@ -177,6 +177,8 @@ nav {
 
 .giftionary-container {
 	margin-top: 10;
+	margin-left: 5%;
+	width:90%;
 	background-color: #cfcfcf;
 	border-left-style: outset;
 	border-left-color: rgb(165, 165, 165);
