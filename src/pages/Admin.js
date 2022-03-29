@@ -162,6 +162,7 @@ const Admin = () => {
 						<button className='admin-btn' type='submit'>
 							{loading ? 'Submitting' : 'Submit'}
 						</button>
+
 					</div>
 				</form>
 			</div>

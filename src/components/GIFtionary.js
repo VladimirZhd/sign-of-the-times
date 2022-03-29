@@ -7,14 +7,19 @@ import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 
 const GIFtionary = () => {
+	// Create state variable for list of gifs
 	const [gifs, setGifs] = useState([]);
+	// Retrieve all of the gifs from the database on component init
 	useEffect(() => {
+		// Database query
 		const gifQuery = query(collection(db, 'gifs'));
+		// Get records from the firestore
 		getDocs(gifQuery).then((querySnapshot) => {
 			const data = [];
 			querySnapshot.forEach((doc) => {
 				data.push(doc.data());
 			});
+			// Save all received gifs to the state
 			setGifs(data);
 		});
 	}, []);
@@ -25,24 +30,28 @@ const GIFtionary = () => {
 					<div className='giftionary-wrapper'></div>
 					{gifs.length > 0 &&
 						gifs.map((gif) => (
-							<Link to={`/gif/${gif.uid}`}
-							style={{ width: '18rem', margin: '1rem' }}>
-								<Card
-									className='gif'
-									border='secondary'
-									key={gif.uid}>
+							<Link
+								to={`/gif/${gif.uid}`}
+								key={gif.uid}
+								style={{
+									width: '18rem',
+									margin: '1rem',
+									color: 'black',
+									textDecoration: 'none',
+								}}>
+								<Card className='gif' border='secondary'>
 									<Card.Img
 										className='btmimg'
 										variant='top'
 										src={gif.gifUrl}
 									/>
-									<Card.Img
-										className='topimg'
-										variant='top'
-										src={
-											'https://docs.google.com/drawings/d/e/2PACX-1vQOf72qNFE4S83F8AOFk32tGyzu7qVIoiv8kYfITU3N8YgYMhSZ69-Z2Gnk6buaPu9krqjziqiM9Va0/pub?w=689&h=690'
-										}
-									/>
+									{gif.imageUrl && (
+										<Card.Img
+											className='topimg'
+											variant='top'
+											src={gif.imageUrl}
+										/>
+									)}
 									<Card.Body>
 										<Card.Title style={{}}>
 											{gif.translation.join(' ')}

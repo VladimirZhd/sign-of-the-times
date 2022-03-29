@@ -12,6 +12,7 @@ const Details = () => {
 	// create a gif state
 	const [gif, setGif] = useState(null);
 
+	// Get a gif from database using id from url path
 	useEffect(() => {
 		if (id) {
 			// read from the database using the id
@@ -25,25 +26,39 @@ const Details = () => {
 			{gif && (
 				<div className='result-container-detail' key={gif.uid}>
 					<Container fluid='90%' className='result-container-detail'>
-					<div key={gif.uid}>
-						<Row style={{paddingBottom: '0.3em', paddingTop: '1em'}}>
-						<Col ></Col>
-						<Col sm={6} className='outline-results'><h1 >{gif.translation}</h1></Col>
-						
-						<Col ></Col>
-						</Row>
-						<Row >
-						<Col md={3}></Col>
-							<Col md={3} style={{backgroundColor:"#0184BC"}}>
-						<img src={gif.gifUrl} alt={gif.translation} style={{height: "auto", width: "100%"}}/>
-						</Col>
-						<Col md={3} className='outline-results'>
-						<p>This is the info once we add it to the database</p>
-						</Col>
-						<Col md={2}></Col>
-						</Row>
+						<div key={gif.uid}>
+							<Row
+								style={{
+									paddingBottom: '0.3em',
+									paddingTop: '1em',
+								}}>
+								<Col></Col>
+								<Col sm={6} className='outline-results'>
+									<h1>{gif.translation}</h1>
+								</Col>
 
-					</div>
+								<Col></Col>
+							</Row>
+							<Row>
+								<Col md={3}></Col>
+								<Col
+									md={3}
+									style={{ backgroundColor: '#0184BC' }}>
+									<img
+										src={gif.gifUrl}
+										alt={gif.translation.join(' ')}
+										style={{
+											height: 'auto',
+											width: '100%',
+										}}
+									/>
+								</Col>
+								<Col md={3} className='outline-results'>
+									<p>{gif.description.join(' ')}</p>
+								</Col>
+								<Col md={2}></Col>
+							</Row>
+						</div>
 					</Container>
 				</div>
 			)}
@@ -52,5 +67,3 @@ const Details = () => {
 };
 
 export default Details;
-
-
