@@ -12,6 +12,7 @@ const Details = () => {
 	// create a gif state
 	const [gif, setGif] = useState(null);
 
+	// Get a gif from database using id from url path
 	useEffect(() => {
 		if (id) {
 			// read from the database using the id

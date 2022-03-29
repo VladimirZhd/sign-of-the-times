@@ -7,14 +7,19 @@ import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 
 const GIFtionary = () => {
+	// Create state variable for list of gifs
 	const [gifs, setGifs] = useState([]);
+	// Retrieve all of the gifs from the database on component init
 	useEffect(() => {
+		// Database query
 		const gifQuery = query(collection(db, 'gifs'));
+		// Get records from the firestore
 		getDocs(gifQuery).then((querySnapshot) => {
 			const data = [];
 			querySnapshot.forEach((doc) => {
 				data.push(doc.data());
 			});
+			// Save all received gifs to the state
 			setGifs(data);
 		});
 	}, []);

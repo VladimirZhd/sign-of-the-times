@@ -46,6 +46,7 @@ const Home = () => {
 					error: '',
 				});
 			} else {
+				// Set to the initial state
 				setData({
 					...data,
 					error: '',
