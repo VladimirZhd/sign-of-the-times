@@ -1,30 +1,27 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment.}
+Signs of the times is a web dictionary for ASL, with search capability. Along with admin functionality for adding signs to the database.
 
-{Provide a description of your team project. Describe how to use the software.}
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+Firebase, React/bootstrap, css/html, Adobe Photoshop, github.
 
 # Collaborators
 
-{Provide a list of everyone on your team}
+Vova Zhdanov, Sam Heaven, Joseph Hampton, Ethan Meeker, Spencer Wadsworth
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
--   [Web Site Name](http://url.link.goes.here)
--   [Web Site Name](http://url.link.goes.here)
-
+-   [github](https://github.com/)
+-   [firebase documentation](https://firebase.google.com/docs)
+-   [Adobe help page](helpx.adobe.com/support/photoshop.com)
+-   [react-bootstrap documentation](https://react-bootstrap.github.io/getting-started/introduction/)
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
--   Item 1
--   Item 2
--   Item 3
+-   More GIFs
+-   Fix firebase query (AT GOOGLE)
+-   Word of the day
+-   Fix page size messing with formating
