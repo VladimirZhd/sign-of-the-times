@@ -19,8 +19,6 @@ Vova Zhdanov, Sam Heaven, Joseph Hampton, Ethan Meeker, Spencer Wadsworth
 -   [react-bootstrap documentation](https://react-bootstrap.github.io/getting-started/introduction/)
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
 -   More GIFs
 -   Fix firebase query (AT GOOGLE)
 -   Word of the day
