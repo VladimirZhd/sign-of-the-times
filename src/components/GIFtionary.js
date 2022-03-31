@@ -25,8 +25,8 @@ const GIFtionary = () => {
 	}, []);
 	return (
 		<>
-			<Container>
-				<Row className='giftionary-container'>
+			<Container className='giftionary-container'>
+				<Row >
 					<div className='giftionary-wrapper'></div>
 					{gifs.length > 0 &&
 						gifs.map((gif) => (

@@ -176,6 +176,8 @@ nav {
 
 .giftionary-container {
 	margin-top: 10;
+	margin-left: 5%;
+	width:90%;
 	background-color: #cfcfcf;
 	border-left-style: outset;
 	border-left-color: rgb(165, 165, 165);
